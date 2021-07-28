@@ -1,0 +1,47 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Math operations with safety checks that revert on error",
+			"kind": "dev",
+			"methods": {},
+			"title": "SafeMathUint",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"BabyEthereum.sol": "SafeMathUint"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 20000
+		},
+		"remappings": []
+	},
+	"sources": {
+		"BabyEthereum.sol": {
+			"keccak256": "0xae892660e5a0f39b26a068b830fd54231834aa9ae6a3e0f28d33c10dcb53da91",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1461638926d105cdaf124fecd126e4a776d66a0e85d2f07f1ac50c55e9bce21f",
+				"dweb:/ipfs/QmThiwcKxxBnExjWZwwDfuWsgp2nNaccmuL8SsLKbAYJWK"
+			]
+		}
+	},
+	"version": 1
+}

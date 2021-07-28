@@ -1,0 +1,161 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "weiAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "DividendWithdrawn",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "weiAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "DividendsDistributed",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "distributeDividends",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "dividendOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawDividend",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Roger Wu (https://github.com/roger-wu)",
+			"details": "An interface for a dividend-paying token contract.",
+			"events": {
+				"DividendWithdrawn(address,uint256)": {
+					"details": "This event MUST emit when an address withdraws their dividend.",
+					"params": {
+						"to": "The address which withdraws ether from this contract.",
+						"weiAmount": "The amount of withdrawn ether in wei."
+					}
+				},
+				"DividendsDistributed(address,uint256)": {
+					"details": "This event MUST emit when ether is distributed to token holders.",
+					"params": {
+						"from": "The address which sends ether to this contract.",
+						"weiAmount": "The amount of distributed ether in wei."
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"distributeDividends()": {
+					"details": "SHOULD distribute the paid ether to token holders as dividends.  SHOULD NOT directly transfer ether to token holders in this function.  MUST emit a `DividendsDistributed` event when the amount of distributed ether is greater than 0."
+				},
+				"dividendOf(address)": {
+					"params": {
+						"_owner": "The address of a token holder."
+					},
+					"returns": {
+						"_0": "The amount of dividend in wei that `_owner` can withdraw."
+					}
+				},
+				"withdrawDividend()": {
+					"details": "SHOULD transfer `dividendOf(msg.sender)` wei to `msg.sender`, and `dividendOf(msg.sender)` SHOULD be 0 after the transfer.  MUST emit a `DividendWithdrawn` event if the amount of ether transferred is greater than 0."
+				}
+			},
+			"title": "Dividend-Paying Token Interface",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"distributeDividends()": {
+					"notice": "Distributes ether to token holders as dividends."
+				},
+				"dividendOf(address)": {
+					"notice": "View the amount of dividend in wei that an address can withdraw."
+				},
+				"withdrawDividend()": {
+					"notice": "Withdraws the ether distributed to the sender."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"BabyEthereum.sol": "IDividendPayingToken"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 20000
+		},
+		"remappings": []
+	},
+	"sources": {
+		"BabyEthereum.sol": {
+			"keccak256": "0xae892660e5a0f39b26a068b830fd54231834aa9ae6a3e0f28d33c10dcb53da91",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1461638926d105cdaf124fecd126e4a776d66a0e85d2f07f1ac50c55e9bce21f",
+				"dweb:/ipfs/QmThiwcKxxBnExjWZwwDfuWsgp2nNaccmuL8SsLKbAYJWK"
+			]
+		}
+	},
+	"version": 1
+}
